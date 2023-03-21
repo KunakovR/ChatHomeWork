@@ -42,6 +42,14 @@ public class Client {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                if (in != null) in.close();
+                if (out != null) out.close();
+                if (client != null) client.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
